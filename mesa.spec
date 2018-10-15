@@ -41,7 +41,7 @@
 %endif
 %endif
 
-%ifarch x86_64 ppc64le
+%ifarch %{ix86} x86_64 ppc64le
 %define with_vulkan 1
 %else
 %define with_vulkan 0
@@ -656,12 +656,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %if 0%{?with_vulkan}
 %files vulkan-drivers
-%ifarch x86_64
+%ifarch %{ix86} x86_64
 %{_libdir}/libvulkan_intel.so
-%{_datadir}/vulkan/icd.d/intel_icd.x86_64.json
 %endif
 %{_libdir}/libvulkan_radeon.so
+%ifarch %{ix86}
+%{_datadir}/vulkan/icd.d/intel_icd.i686.json
+%{_datadir}/vulkan/icd.d/radeon_icd.i686.json
+%endif
 %ifarch x86_64
+%{_datadir}/vulkan/icd.d/intel_icd.x86_64.json
 %{_datadir}/vulkan/icd.d/radeon_icd.x86_64.json
 %endif
 %ifarch ppc64le
