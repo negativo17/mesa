@@ -58,7 +58,8 @@ Name:           mesa
 Summary:        Mesa graphics libraries
 %global ver 23.1.9
 Version:        %{lua:ver = string.gsub(rpm.expand("%{ver}"), "-", "~"); print(ver)}
-Release:        %autorelease
+Release:        1%{?dist}
+Epoch:          1
 License:        MIT
 URL:            http://www.mesa3d.org
 
@@ -402,6 +403,7 @@ export RUSTFLAGS="%build_rustflags"
   -Dbuild-tests=false \
   -Dselinux=true \
   -Dandroid-libbacktrace=disabled \
+  -Dvideo-codecs=vc1dec,h264dec,h264enc,h265dec,h265enc \
   %{nil}
 %meson_build
 
@@ -653,4 +655,6 @@ popd
 %endif
 
 %changelog
-%autochangelog
+* Mon Nov 30 2023 Simone Caronni <negativo17@gmail.com> - 1:23.1.9-1
+- Enable patent encumbered codecs.
+- Drop autospec/autochangelog.
