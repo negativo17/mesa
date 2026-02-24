@@ -507,7 +507,7 @@ rm -vf %{buildroot}%{_libdir}/dri/apple_dri.so
 
 # glvnd needs a default provider for indirect rendering where it cannot
 # determine the vendor
-ln -s %{_libdir}/libGLX_mesa.so.0 %{buildroot}%{_libdir}/libGLX_system.so.0
+ln -s libGLX_mesa.so.0 %{buildroot}%{_libdir}/libGLX_system.so.0
 
 # this keeps breaking, check it early.  note that the exit from eu-ftr is odd.
 pushd %{buildroot}%{_libdir}
