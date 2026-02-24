@@ -85,6 +85,7 @@
 
 Name:           mesa
 Summary:        Mesa graphics libraries
+Epoch:          1
 %global ver 25.2.7
 Version:        %{lua:ver = string.gsub(rpm.expand("%{ver}"), "-", "~"); print(ver)}
 Release:        %autorelease
@@ -472,6 +473,7 @@ rewrite_wrap_file rustc-hash
   -Dlmsensors=disabled \
 %endif
   -Dandroid-libbacktrace=disabled \
+  -Dvideo-codecs=all \
 %ifarch %{ix86}
   -Dglx-read-only-text=true \
 %endif
