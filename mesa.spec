@@ -473,6 +473,7 @@ rewrite_wrap_file rustc-hash
   -Dlmsensors=disabled \
 %endif
   -Dandroid-libbacktrace=disabled \
+  -Dvideo-codecs=all \
 %ifarch %{ix86}
   -Dglx-read-only-text=true \
 %endif
