@@ -80,6 +80,7 @@
 
 Name:           mesa
 Summary:        Mesa graphics libraries
+Epoch:          1
 Version:        26.0.4
 Release:        %autorelease
 License:        MIT AND BSD-3-Clause AND SGI-B-2.0
@@ -463,6 +464,7 @@ rewrite_wrap_file rustc-hash
   -Dlmsensors=disabled \
 %endif
   -Dandroid-libbacktrace=disabled \
+  -Dvideo-codecs=all \
 %ifarch %{ix86}
   -Dglx-read-only-text=true \
 %endif
