@@ -249,7 +249,7 @@ Requires:       libglvnd-devel%{?_isa} >= 1:1.3.2
 Provides:       libGL-devel = %{?epoch:%{epoch}:}%{version}-%{release}
 Provides:       libGL-devel%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 Recommends:     gl-manpages
-Obsoletes:      %{name}-libOSMesa-devel < 25.1.0~rc2-1
+Obsoletes:      %{name}-libOSMesa-devel < %{?epoch:%{epoch}:}25.1.0~rc2-1
 
 %description libGL-devel
 %{summary}.
@@ -278,11 +278,11 @@ Provides:       libEGL-devel%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 Summary:        Mesa-based DRI drivers
 Requires:       %{name}-filesystem%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 Requires:       %{name}-libgbm%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
-Obsoletes:      %{name}-libglapi < 25.0.0~rc2-1
-Obsoletes:      %{name}-va-drivers < 26.0.0-5
+Obsoletes:      %{name}-libglapi < %{?epoch:%{epoch}:}25.0.0~rc2-1
+Obsoletes:      %{name}-va-drivers < %{?epoch:%{epoch}:}26.0.0-5
 Provides:       %{name}-va-drivers = %{?epoch:%{epoch}:}%{version}-%{release}
 Provides:       %{name}-va-drivers%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
-Obsoletes:      %{name}-vaapi-drivers < 22.2.0-5
+Obsoletes:      %{name}-vaapi-drivers < %{?epoch:%{epoch}:}22.2.0-5
 
 %description dri-drivers
 %{summary}.
