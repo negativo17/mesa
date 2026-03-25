@@ -226,7 +226,7 @@ Obsoletes:      mesa-vdpau-drivers < %{?epoch:%{epoch}:}%{version}-%{release}
 Summary:        Mesa libGL runtime libraries
 Requires:       libglvnd-glx%{?_isa} >= 1:1.3.2
 Requires:       %{name}-dri-drivers%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
-Obsoletes:      %{name}-libOSMesa < 25.1.0~rc2-1
+Obsoletes:      %{name}-libOSMesa < %{?epoch:%{epoch}:}25.1.0~rc2-1
 
 %description libGL
 %{summary}.
@@ -238,7 +238,7 @@ Requires:       libglvnd-devel%{?_isa} >= 1:1.3.2
 Provides:       libGL-devel = %{?epoch:%{epoch}:}%{version}-%{release}
 Provides:       libGL-devel%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 Recommends:     gl-manpages
-Obsoletes:      %{name}-libOSMesa-devel < 25.1.0~rc2-1
+Obsoletes:      %{name}-libOSMesa-devel < %{?epoch:%{epoch}:}25.1.0~rc2-1
 
 %description libGL-devel
 %{summary}.
@@ -269,8 +269,8 @@ Requires:       %{name}-filesystem%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{rel
 %if 0%{?with_va}
 Recommends:     %{name}-va-drivers%{?_isa}
 %endif
-Obsoletes:      %{name}-libglapi < 25.0.0~rc2-1
-Provides:       %{name}-libglapi >= 25.0.0~rc2-1
+Obsoletes:      %{name}-libglapi < %{?epoch:%{epoch}:}25.0.0~rc2-1
+Provides:       %{name}-libglapi >= %{?epoch:%{epoch}:}25.0.0~rc2-1
 
 %description dri-drivers
 %{summary}.
@@ -279,7 +279,7 @@ Provides:       %{name}-libglapi >= 25.0.0~rc2-1
 %package        va-drivers
 Summary:        Mesa-based VA-API video acceleration drivers
 Requires:       %{name}-filesystem%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
-Obsoletes:      %{name}-vaapi-drivers < 22.2.0-5
+Obsoletes:      %{name}-vaapi-drivers < %{?epoch:%{epoch}:}22.2.0-5
 
 %description va-drivers
 %{summary}.
