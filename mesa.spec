@@ -139,6 +139,7 @@ BuildRequires:  pkgconfig(wayland-client) >= 1.11
 BuildRequires:  pkgconfig(wayland-server) >= 1.11
 BuildRequires:  pkgconfig(wayland-egl-backend) >= 3
 BuildRequires:  pkgconfig(libdisplay-info)
+BuildRequires:  pkgconfig(libpng)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xext)
 BuildRequires:  pkgconfig(xdamage) >= 1.1
@@ -448,7 +449,7 @@ rewrite_wrap_file rustc-hash
   -Dgallium-rusticl=true \
 %endif
   -Dvulkan-drivers=%{?vulkan_drivers} \
-  -Dvulkan-layers=device-select,overlay%{?with_vulkan_layers_anti_lag:,anti-lag} \
+  -Dvulkan-layers=device-select,overlay,screenshot%{?with_vulkan_layers_anti_lag:,anti-lag} \
   -Dgles1=enabled \
   -Dgles2=enabled \
   -Dopengl=true \
@@ -702,6 +703,9 @@ ln -s libGLX_mesa.so.0 %{buildroot}%{_libdir}/libGLX_system.so.0
 %{_bindir}/mesa-overlay-control.py
 %{_libdir}/libVkLayer_MESA_overlay.so
 %{_datadir}/vulkan/explicit_layer.d/VkLayer_MESA_overlay.json
+%{_bindir}/mesa-screenshot-control.py
+%{_libdir}/libVkLayer_MESA_screenshot.so
+%{_datadir}/vulkan/explicit_layer.d/VkLayer_MESA_screenshot.json
 %if 0%{?with_vulkan_layers_anti_lag}
 %{_libdir}/libVkLayer_MESA_anti_lag.so
 %{_datadir}/vulkan/implicit_layer.d/VkLayer_MESA_anti_lag.json
