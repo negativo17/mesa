@@ -450,6 +450,12 @@ rewrite_wrap_file rustc-hash
 %endif
   -Dvulkan-drivers=%{?vulkan_drivers} \
   -Dvulkan-layers=device-select,overlay,screenshot%{?with_vulkan_layers_anti_lag:,anti-lag} \
+%if 0%{?with_radeonsi}
+  -Damdgpu-virtio=true \
+%endif
+%if 0%{?with_freedreno}
+  -Dfreedreno-kmds=msm,virtio \
+%endif
   -Dgles1=enabled \
   -Dgles2=enabled \
   -Dopengl=true \
